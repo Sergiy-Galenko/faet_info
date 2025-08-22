@@ -1,0 +1,7 @@
+.vertical {
+    height: 50px;
+    width: 2px;
+    margin: 0 10px;
+    background: gray;
+    border-radius: 20px;
+}

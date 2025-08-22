@@ -1,0 +1,24 @@
+.home_background {
+    max-width: 60%;
+}
+
+.home_content {
+    position: absolute;
+    z-index: 2;
+    top: 20%;
+    max-width: 40%;
+    text-wrap: balance;
+}
+
+.home_content__title,
+.home_content__paragraph {
+    color: white;
+}
+
+.home_content__paragraph {
+    margin-bottom: 30px;
+}
+
+.home_content__buttons {
+    display: flex;
+}

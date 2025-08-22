@@ -1,0 +1,47 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.breadcrumbList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbItem {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbItem:not(:last-child) {
+    margin-right: 8px;
+    /* Відступ між елементами */
+}
+
+.homeLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    /* Колір значка будинку */
+}
+
+.homeIcon {
+    font-size: 1.2rem;
+    /* Розмір значка */
+    color: white;
+}
+
+.separator {
+    margin: 0 8px;
+    color: gray;
+    /* Колір роздільника */
+}
+
+.currentPage {
+    font-weight: bold;
+    color: gray;
+}

@@ -1,0 +1,26 @@
+.lessonsBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+}
+
+/* Lessons card */
+.card {
+    background-color: #00609C;
+    border-radius: 10px;
+    padding: 20px 20px;
+    min-width: 200px;
+}
+
+.title__text {
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.teachersCount__text {
+    font-size: 16px;
+    color: #ffffff;
+}
+

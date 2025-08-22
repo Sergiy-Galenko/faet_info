@@ -1,0 +1,29 @@
+.blockBody {
+    z-index: 1;
+    background-color: rgb(30, 30, 30);
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-left: 50%;
+}
+  
+.svgContainer {
+    height: 300px;
+}
+
+path {
+    stroke: #ffffff;
+    stroke-width: 10px;
+    fill: none;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+    transition: stroke-dashoffset 3s ease, stroke 0.5s ease;
+}
+
+.svgContainer:hover path {
+    stroke-dashoffset: 0;
+    stroke: #00ffff;
+    filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 50px #00ffff);
+}

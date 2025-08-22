@@ -1,0 +1,43 @@
+/* Темна схема */
+.blockBody {
+    background-color: #0b1220;   /* чорний фон */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 16px;
+  }
+  
+  /* Контейнер для SVG — контролює розмір літака */
+  .svgContainer {
+    /* було max-width: 600px; робимо компактніше */
+    width: clamp(240px, 34vw, 420px);
+    /* за потреби зменшити ще — зменьши 420px або 34vw */
+    height: auto;
+    overflow: hidden;
+  }
+  
+  /* Гарантовано підганяємо сам SVG під контейнер */
+  .svgContainer svg {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+  
+  /* Анімація контуру */
+  path {
+    stroke: #ffffff;
+    stroke-width: 8px;           /* було 10px — трішки тонше під менший розмір */
+    fill: none;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+    transition: stroke-dashoffset 3s ease, stroke 0.5s ease, filter .3s ease;
+  }
+  
+  .svgContainer:hover path {
+    stroke-dashoffset: 0;
+    stroke: #00ffff; /* бірюзово-синій світіння */
+    filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 50px #00ffff);
+  }
+  

@@ -1,25 +1,38 @@
-import React from 'react';
-import styles from '../styles/components/Header.module.css';
-import logo from "../logo.webp";
-import { nav } from '../data/links';
+import React from "react";
+import "../styles/Header.css";
 
-function Header() {
-    return (
-      <header className={styles.header}>
-        <div className={styles.header_logoBlock}>
-            <a href='/'>
-              <img src={logo} alt="Logo" />
-            </a>
-        </div>
-        <div className={styles.header_nav}>
-          {nav.map((item) => (
-              <a key={item.url} className={styles.header_nav__link} href={item.url}>
-                  {item.text}
-              </a>
-          ))}
-        </div>
-      </header>
-    );
+export default function Header() {
+  return (
+    <header className="faet-header">
+      <div className="faet-container">
+        <a href="/" className="faet-brand" aria-label="FAET — головна">
+          <FaetLogo className="faet-logo" />
+          <span className="faet-brand-text">FAET</span>
+        </a>
+
+        <nav className="faet-nav" aria-label="Головна навігація">
+          <a className="faet-link" href="/navchannia">Навчання</a>
+          <a className="faet-link" href="/hurtozhytky">Гуртожитки</a>
+          <a className="faet-link" href="/orhanizatsii">Організації</a>
+          <a className="faet-link" href="/slovnyk-pershokursnyka">Словник першокурсника</a>
+        </nav>
+      </div>
+    </header>
+  );
 }
 
-export default Header;
+function FaetLogo({ className = "" }) {
+  return (
+    <svg
+      viewBox="0 0 48 48"
+      className={className}
+      role="img"
+      aria-label="FAET логотип"
+    >
+      <rect x="2" y="2" width="44" height="44" rx="8" className="faet-logo-bg" />
+      <text x="50%" y="56%" textAnchor="middle" className="faet-logo-text">
+        FAET
+      </text>
+    </svg>
+  );
+}

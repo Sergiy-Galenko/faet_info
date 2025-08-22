@@ -1,0 +1,26 @@
+:root{
+    /* одна змінна для шрифту на весь сайт */
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
+                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+                 "Noto Color Emoji";
+    /* базові кольори теми (на випадок, якщо ще не було) */
+    --bg:#0b1220;
+    --txt:#e5e7eb;
+  }
+  
+  html { font-size: 16px; }
+  
+  body{
+    font-family: var(--font-sans);
+    color: var(--txt);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    line-height: 1.55;
+  }
+  
+  h1,h2,h3 { letter-spacing: 0.2px; }
+  button, input, textarea, select { font-family: inherit; }
+  

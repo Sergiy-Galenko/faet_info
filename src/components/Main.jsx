@@ -3,7 +3,6 @@ import styles from "../styles/components/Main.module.css";
 import Home from "../views/Home";
 import Lessons from "../views/Lessons";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Registration from "../components/Registration";
 import Breadcrumbs from "./Breadcrumbs";
 
 function Main() {
@@ -13,7 +12,6 @@ function Main() {
         <Breadcrumbs />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Registration />} />
           <Route path="/lessons" element={<Lessons />} />
         </Routes>
       </Router>

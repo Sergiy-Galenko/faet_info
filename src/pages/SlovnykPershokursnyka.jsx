@@ -63,7 +63,6 @@ export default function SlovnykPershokursnyka() {
         <div className={styles.heroInner}>
           <h1 className={styles.title}>
             Що це означає?
-            <img src="/assets/plane.png" alt="" className={styles.planeIcon} />
           </h1>
           <p className={styles.lead}>
             Тлумачимо всі слова, які чутимеш у перші тижні навчання.

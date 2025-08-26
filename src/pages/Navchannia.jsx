@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Navchannia.module.css";
+import payment from "../image/2025-08-26_12-19-01.jpg";
 
 function AccordionItem({ title, defaultOpen = false, children }) {
   return (
@@ -28,7 +29,6 @@ export default function Navchannia() {
         <div className={styles.heroInner}>
           <h1 className={styles.title}>
             Навчання з FAET!
-            <img src="/assets/plane.png" alt="" className={styles.planeIcon} />
           </h1>
           <p className={styles.lead}>
             Все, що потрібно знати першокурснику: карти, розклад, стипендії та більше!
@@ -51,20 +51,11 @@ export default function Navchannia() {
             <div className={styles.center}>
               <a
                 className={styles.linkBtn}
-                href="https://www.google.com/maps/d/u/0/edit?mid=10bcc2Zp086kBM4H3koWbXG3UCKUy87w&usp=sharing"
+                href="https://www.google.com/maps/search/нау"
                 target="_blank" rel="noreferrer"
               >
                 Карта НАУ
               </a>
-            </div>
-
-            <div className={styles.gallery}>
-              <img
-                src="/assets/map.png"
-                alt="Карта кампусу"
-                className={styles.image}
-                onClick={() => setLightboxSrc("/assets/map.png")}
-              />
             </div>
           </AccordionItem>
 
@@ -98,7 +89,7 @@ export default function Navchannia() {
               Списки груп з’являються за тиждень до початку навчання:
               {" "}
               <a
-                href="https://fcst.nau.edu.ua/%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B8-%D0%B3%D1%80%D1%83%D0%BF/"
+                href="https://sites.google.com/npp.nau.edu.ua/faet/%D1%81%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%82%D0%B0%D0%BC/%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B8-%D0%B3%D1%80%D1%83%D0%BF"
                 target="_blank" rel="noreferrer" className={styles.hyper}
               >
                 посилання
@@ -132,10 +123,10 @@ export default function Navchannia() {
             </p>
             <div className={styles.gallery}>
               <img
-                src="/assets/rozklad.png"
+                src="https://pppo.nau.edu.ua/wp-content/uploads/2021/10/photo_2021-09-10_10-34-22-1024x766.jpg"
                 alt="Розклад дзвінків"
                 className={styles.image}
-                onClick={() => setLightboxSrc("/assets/rozklad.png")}
+                onClick={() => setLightboxSrc("https://pppo.nau.edu.ua/wp-content/uploads/2021/10/photo_2021-09-10_10-34-22-1024x766.jpg")}
               />
             </div>
           </AccordionItem>
@@ -178,14 +169,6 @@ export default function Navchannia() {
               <li><b>Підвищена</b> — 2910 грн (за порогом на підвищену)</li>
               <li><b>Соціальна</b> — 1180 грн (за пільгами)</li>
             </ul>
-            <div className={styles.gallery}>
-              <img
-                src="/assets/pilga.png"
-                alt="Інформація про пільги"
-                className={styles.image}
-                onClick={() => setLightboxSrc("/assets/pilga.png")}
-              />
-            </div>
           </AccordionItem>
 
           {/* Стипендіальна картка */}
@@ -216,10 +199,10 @@ export default function Navchannia() {
             <p>Деталі системи оцінювання:</p>
             <div className={styles.gallery}>
               <img
-                src="/assets/marks.png"
+                src="https://scontent.fhrk8-1.fna.fbcdn.net/v/t1.6435-9/48412121_2471987316149326_7276008541721198592_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4CusQtZqQ-oQ7kNvwG4B3tb&_nc_oc=AdlYgwO7gxu9I-OB3plU2NhPMzJTacV9gx00owR2ce_NdIOloNiTX9I5DbPRa986j2o&_nc_zt=23&_nc_ht=scontent.fhrk8-1.fna&_nc_gid=huOZ4mIDvi05OdjcrUZ7fg&oh=00_AfWSYxObUVu_Fm7HmsGCRZQZbufwor6CyQqC_xO2U3gnbg&oe=68D4DEDE"
                 alt="Таблиця оцінювання"
                 className={styles.image}
-                onClick={() => setLightboxSrc("/assets/marks.png")}
+                onClick={() => setLightboxSrc("https://scontent.fhrk8-1.fna.fbcdn.net/v/t1.6435-9/48412121_2471987316149326_7276008541721198592_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4CusQtZqQ-oQ7kNvwG4B3tb&_nc_oc=AdlYgwO7gxu9I-OB3plU2NhPMzJTacV9gx00owR2ce_NdIOloNiTX9I5DbPRa986j2o&_nc_zt=23&_nc_ht=scontent.fhrk8-1.fna&_nc_gid=huOZ4mIDvi05OdjcrUZ7fg&oh=00_AfWSYxObUVu_Fm7HmsGCRZQZbufwor6CyQqC_xO2U3gnbg&oe=68D4DEDE")}
               />
             </div>
             <div className={styles.note}>
@@ -287,10 +270,10 @@ export default function Navchannia() {
             </div>
             <div className={styles.gallery}>
               <img
-                src="/assets/payment.jpg"
+                src={payment}
                 alt="Оплата навчання"
                 className={styles.image}
-                onClick={() => setLightboxSrc("/assets/payment.jpg")}
+                onClick={() => setLightboxSrc(payment)}
               />
             </div>
           </AccordionItem>

@@ -1,107 +1,130 @@
 :root{
-    --bg:#0b1220;        /* чорний */
-    --card:#111827;      /* темна картка */
-    --txt:#e5e7eb;       /* світлий текст */
-    --muted:#9ca3af;     /* приглушений */
-    --blue:#2563eb;      /* синій акцент */
-    --border:#1f2937;    /* бордер */
-  }
-  
-  .page{
-    max-width:1200px;
-    margin:0 auto;
-    padding:24px 16px 64px;
-    color:var(--txt);
-  }
-  
-  /* HERO */
-  .hero{
-    background: radial-gradient(60% 80% at 20% 10%, rgba(37,99,235,0.15), transparent),
-                linear-gradient(180deg, rgba(37,99,235,0.10), transparent 60%);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:32px 24px;
-    margin-bottom:24px;
-  }
-  .heroInner{ text-align:center; }
-  .title{
-    margin:0 0 8px 0; color:#fff; font-size:clamp(24px, 4vw, 40px);
-  }
-  .lead{ margin:0 0 16px 0; color:var(--muted); }
-  .planeIcon{ width:36px; height:36px; margin-left:8px; vertical-align:middle; }
-  .primaryBtn{
-    display:inline-block; padding:10px 16px; border-radius:12px; text-decoration:none;
-    border:1px solid var(--blue); color:#fff;
-    background:linear-gradient(180deg, rgba(37,99,235,0.25), rgba(37,99,235,0.06));
-  }
-  .primaryBtn:hover{ background:rgba(37,99,235,0.3); }
-  
-  /* SECTION */
-  .section{ margin-top:8px; }
-  .sectionTitle{
-    margin:0 0 16px 0; color:#fff; text-align:center; font-size:clamp(20px, 3vw, 28px);
-  }
-  
-  /* ACCORDION (native details/summary) */
-  .accordion{ display:grid; gap:12px; }
-  .accItem{
-    background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden;
-  }
-  .accSummary{
-    cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between;
-    padding:16px 18px; color:#fff; font-weight:600;
-  }
-  .accSummary::-webkit-details-marker{ display:none; }
-  .chevron{ transition: transform .2s ease; opacity:.9; }
-  .accItem[open] .chevron{ transform: rotate(180deg); }
-  .accBody{ padding: 0 18px 18px; color:var(--muted); line-height:1.65; }
-  .mt{ margin-top:10px; }
-  .strong{ font-weight:700; }
-  
-  /* Lists, links, notes */
-  .list{ margin:8px 0 12px 18px; }
-  .hyper{ color:#8ab4ff; text-decoration:underline; }
-  .hyper:hover{ text-decoration:none; }
-  .note{
-    margin:12px 0; padding:12px; border:1px dashed var(--border); border-radius:12px;
-    background:rgba(37,99,235,0.06); color:#cbd5e1;
-  }
-  
-  /* Gallery / Images */
-  .center{ text-align:center; }
-  .linkBtn{
-    display:inline-block; margin-top:6px; padding:8px 14px; border-radius:10px; color:#fff;
-    border:1px solid var(--blue);
-    background:linear-gradient(180deg, rgba(37,99,235,0.2), rgba(37,99,235,0.05));
-    text-decoration:none;
-  }
-  .linkBtn:hover{ background:rgba(37,99,235,0.28); }
-  
-  .gallery{
-    margin-top:14px; display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px;
-  }
-  .image{
-    width:100%; height:auto; border-radius:12px; border:1px solid var(--border);
-    cursor:zoom-in; display:block;
-  }
-  
-  /* Lightbox */
-  .lightbox{
-    position:fixed; inset:0; background:rgba(0,0,0,.75);
-    display:flex; align-items:center; justify-content:center; z-index:1000;
-  }
-  .lightboxImg{
-    max-width:92vw; max-height:88vh; border-radius:12px; border:1px solid var(--border);
-  }
-  .closeBtn{
-    position:absolute; top:20px; right:24px; width:40px; height:40px;
-    border-radius:50%; background:#0f172a; color:#fff; border:1px solid var(--border);
-    font-size:28px; line-height:36px; cursor:pointer;
-  }
-  
-  /* Responsive tweaks */
-  @media (max-width:720px){
-    .accSummary{ padding:14px; }
-    .accBody{ padding:0 14px 14px; }
-  }
-  
+  --bg:#0b1220;        /* чорний */
+  --card:#111827;      /* темна картка */
+  --txt:#e5e7eb;       /* світлий текст */
+  --muted:#9ca3af;     /* приглушений */
+  --blue:#2563eb;      /* синій акцент */
+  --border:#1f2937;    /* бордер */
+}
+
+.page{
+  max-width:1200px;
+  margin:0 auto;
+  padding:24px 16px 64px;
+  color:var(--txt);
+}
+
+/* HERO */
+.hero{
+  background: radial-gradient(60% 80% at 20% 10%, rgba(37,99,235,0.15), transparent),
+              linear-gradient(180deg, rgba(37,99,235,0.10), transparent 60%);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:32px 24px;
+  margin-bottom:24px;
+}
+.heroInner{ text-align:center; }
+.title{ margin:0 0 8px 0; color:#fff; font-size:clamp(24px, 4vw, 40px); }
+.lead{ margin:0 0 16px 0; color:var(--muted); }
+.planeIcon{ width:36px; height:36px; margin-left:8px; vertical-align:middle; }
+.primaryBtn{
+  display:inline-block; padding:10px 16px; border-radius:12px; text-decoration:none;
+  border:1px solid var(--blue); color:#fff;
+  background:linear-gradient(180deg, rgba(37,99,235,0.25), rgba(37,99,235,0.06));
+}
+.primaryBtn:hover{ background:rgba(37,99,235,0.3); }
+
+/* SECTION */
+.section{ margin-top:8px; }
+.sectionTitle{
+  margin:0 0 16px 0; color:#fff; text-align:center; font-size:clamp(20px, 3vw, 28px);
+}
+
+/* ACCORDION — центр і акуратна ширина */
+.accordion{
+  display:grid; gap:12px;
+  max-width: 980px;      /* звужуємо контейнер акордеона */
+  margin: 0 auto;        /* центруємо */
+}
+.accItem{
+  background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden;
+}
+.accSummary{
+  cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between;
+  padding:16px 18px; color:#fff; font-weight:600;
+}
+.accSummary::-webkit-details-marker{ display:none; }
+.chevron{ transition: transform .2s ease; opacity:.9; }
+.accItem[open] .chevron{ transform: rotate(180deg); }
+.accBody{ padding: 0 18px 18px; color:var(--muted); line-height:1.65; }
+.mt{ margin-top:10px; }
+.strong{ font-weight:700; }
+
+/* Lists, links, notes */
+.list{ margin:8px auto 12px auto; max-width:820px; } /* список теж у центрі контейнера */
+.hyper{ color:#8ab4ff; text-decoration:underline; }
+.hyper:hover{ text-decoration:none; }
+
+/* Нотатки — центр і помірна ширина */
+.note{
+  margin:12px auto;
+  padding:12px;
+  border:1px dashed var(--border);
+  border-radius:12px;
+  background:rgba(37,99,235,0.06);
+  color:#cbd5e1;
+  max-width: 820px;    /* щоб не розпливались на всю ширину */
+}
+
+/* Кнопки-посилання */
+.center{ text-align:center; }
+.linkBtn{
+  display:inline-block; margin-top:6px; padding:8px 14px; border-radius:10px; color:#fff;
+  border:1px solid var(--blue);
+  background:linear-gradient(180deg, rgba(37,99,235,0.2), rgba(37,99,235,0.05));
+  text-decoration:none;
+}
+.linkBtn:hover{ background:rgba(37,99,235,0.28); }
+
+/* ГАЛЕРЕЯ — фото строго по центру, з обмеженням ширини */
+.gallery{
+  margin-top:14px;
+  display:flex;              /* flex для центрування навіть 1 картинки */
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.image{
+  display:block;
+  width: min(100%, 760px);   /* не ширше 760px */
+  height:auto;
+  border-radius:12px;
+  border:1px solid var(--border);
+  cursor:zoom-in;
+  margin: 0 auto;
+}
+
+/* Lightbox */
+.lightbox{
+  position:fixed; inset:0; background:rgba(0,0,0,.75);
+  display:flex; align-items:center; justify-content:center; z-index:1000;
+}
+.lightboxImg{
+  max-width:92vw; max-height:88vh; border-radius:12px; border:1px solid var(--border);
+}
+.closeBtn{
+  position:absolute; top:20px; right:24px; width:40px; height:40px;
+  border-radius:50%; background:#0f172a; color:#fff; border:1px solid var(--border);
+  font-size:28px; line-height:36px; cursor:pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width:1024px){
+  .accordion{ max-width: 860px; }
+}
+@media (max-width:720px){
+  .accSummary{ padding:14px; }
+  .accBody{ padding:0 14px 14px; }
+  .accordion{ max-width: 100%; }
+}

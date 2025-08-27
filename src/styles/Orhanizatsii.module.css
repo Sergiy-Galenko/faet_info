@@ -1,0 +1,174 @@
+:root{
+    --bg:#0b1220;        /* чорний */
+    --card:#111827;      /* темна картка */
+    --txt:#e5e7eb;       /* світлий текст */
+    --muted:#cbd5e1;     /* приглушений (трохи світліший) */
+    --blue:#2563eb;      /* синій акцент */
+    --border:#1f2937;    /* бордер */
+  }
+  
+  /* Центруємо й звужуємо контент для кращої читабельності */
+  .page{
+    width:min(100%, 1100px);
+    margin-inline:auto;
+    padding: clamp(16px, 2vw, 24px) clamp(12px, 2vw, 16px) 72px;
+    color:var(--txt);
+  }
+  
+  /* HERO */
+  .hero{
+    display:flex; justify-content:center; align-items:center;
+    background:
+      radial-gradient(60% 80% at 20% 10%, rgba(37,99,235,0.15), transparent),
+      linear-gradient(180deg, rgba(37,99,235,0.10), transparent 60%);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding: clamp(20px, 4vw, 36px);
+    margin-bottom: 24px;
+  }
+  .heroInner{
+    width:min(100%, 960px);
+    text-align:center;
+  }
+  .title{
+    margin:0 0 8px 0; color:#fff; letter-spacing:.2px;
+    font-size: clamp(26px, 4vw, 42px);
+  }
+  .lead{
+    margin:0 0 18px 0; color:var(--muted);
+    max-width: 70ch;
+    margin-inline:auto;
+    line-height:1.65;
+  }
+  .primaryBtn{
+    display:inline-block; padding:10px 16px; border-radius:12px; text-decoration:none;
+    border:1px solid var(--blue); color:#fff;
+    background:linear-gradient(180deg, rgba(37,99,235,0.25), rgba(37,99,235,0.06));
+  }
+  .primaryBtn:hover{ background:rgba(37,99,235,0.3); }
+  
+  /* Intro */
+  .introWrap{ margin-top:8px; }
+  .sectionTitle{
+    margin:0 0 16px 0; color:#fff; text-align:center; font-size:clamp(20px, 3vw, 28px);
+  }
+  .introGrid{
+    width:min(100%, 960px);
+    margin:0 auto;
+    display:grid; gap:16px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items:stretch;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 4px 20px rgba(0,0,0,.25);
+    text-align:center;
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .cardTitle{ margin:0; color:#fff; }
+  .cardText{ margin:0; color:var(--muted); line-height:1.7; }
+  
+  /* ACCORDION */
+  .section{ margin-top:24px; }
+  .accordion{
+    width:min(100%, 960px);
+    margin:0 auto;
+    display:grid; gap:14px;
+  }
+  .accItem{
+    background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden;
+  }
+  .accSummary{
+    cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between;
+    padding:16px 18px; color:#fff; font-weight:600;
+  }
+  .accSummary::-webkit-details-marker{ display:none; }
+  .chevron{ transition: transform .2s ease; opacity:.9; }
+  .accItem[open] .chevron{ transform: rotate(180deg); }
+  .accBody{
+    padding: 0 18px 18px;
+    color:var(--muted);
+    line-height:1.75;
+  }
+  
+  /* Загальний текст + центрування */
+  .text{ color:var(--muted); }
+  .center{ text-align:center; }
+  
+  /* Посилання */
+  .hyper{ color:#8ab4ff; text-decoration:underline; }
+  .hyper:hover{ text-decoration:none; }
+  
+  /* Підзаголовки */
+  .subheading{
+    margin:16px 0 10px;
+    color:#fff;
+    text-align:center;
+  }
+  
+  /* Departments & dorm contacts */
+  .deptGrid{
+    display:grid; gap:12px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-bottom:8px;
+  }
+  .deptCard{
+    background:rgba(37,99,235,0.06);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px;
+    text-align:center;
+  }
+  .deptTitle{
+    font-size:1.1rem;
+    color:#fff;
+    margin:0 0 6px 0;
+  }
+  .cleanList{ list-style:none; padding:0; margin:0; }
+  .cleanList li{ margin:4px 0; }
+  
+  /* Logos */
+  .logoWrap{ text-align:center; margin:10px 0; }
+  .logoImg{
+    width:120px; height:auto;
+    border-radius:12px; border:1px solid var(--border);
+    background:#0f172a; padding:8px;
+  }
+  
+  /* Gallery / Images */
+  .gallery{
+    margin-top:12px;
+    display:grid; gap:12px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .image{
+    width:100%; height:auto;
+    border-radius:12px; border:1px solid var(--border);
+    cursor:zoom-in; display:block;
+    object-fit:cover;
+  }
+  
+  /* Lightbox */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(0,0,0,.8);
+    display:flex; align-items:center; justify-content:center; z-index:1000;
+  }
+  .lightboxImg{
+    max-width:92vw; max-height:88vh; border-radius:12px; border:1px solid var(--border);
+    display:block;
+  }
+  .closeBtn{
+    position:absolute; top:20px; right:24px; width:40px; height:40px;
+    border-radius:50%; background:#0f172a; color:#fff; border:1px solid var(--border);
+    font-size:28px; line-height:36px; cursor:pointer;
+  }
+  
+  /* Responsive дрібниці */
+  @media (max-width:720px){
+    .accSummary{ padding:14px; }
+    .accBody{ padding:0 14px 14px; }
+  }
+  

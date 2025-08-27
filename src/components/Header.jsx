@@ -5,9 +5,9 @@ export default function Header() {
   return (
     <header className="faet-header">
       <div className="faet-container">
-        <a href="/" className="faet-brand" aria-label="FAET — головна">
+        <a href="/" className="faet-brand" aria-label="ФАЕТ — головна">
           <FaetLogo className="faet-logo" />
-          <span className="faet-brand-text">FAET</span>
+          <span className="faet-brand-text">ФАЕТ</span>
         </a>
 
         <nav className="faet-nav" aria-label="Головна навігація">

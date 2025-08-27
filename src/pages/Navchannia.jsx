@@ -68,7 +68,7 @@ export default function Navchannia() {
               <li>Решта цифр після крапки — номер аудиторії</li>
             </ul>
             <div className={styles.note}>
-              <strong>Приклад:</strong> ауд. <b>6.201</b> — 6 корпус, 2 поверх, аудиторія 201
+              <strong>Приклад:</strong> ауд. <b>5.222</b> — 6 корпус, 2 поверх, аудиторія 222
             </div>
           </AccordionItem>
 

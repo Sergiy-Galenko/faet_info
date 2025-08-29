@@ -43,7 +43,7 @@ export default function Navchannia() {
 
         <div className={styles.accordion}>
           {/* Карти */}
-          <AccordionItem title="Карти НАУ" defaultOpen>
+          <AccordionItem title="Карти КАІ" defaultOpen>
             <p>
               З перших днів легко заплутатись. Ми підготували інтерактивну мапу —
               корпуси, гуртожитки та корисні місця поруч.
@@ -75,7 +75,7 @@ export default function Navchannia() {
           {/* Списки та групи */}
           <AccordionItem title="Списки та нумерація груп">
             <p>
-              <b>Б-122-23-1-ШІ</b> — це позначення академгрупи. Розшифровка на прикладі:
+              <b>Б-G5-25-1-ТК</b> — це позначення академгрупи. Розшифровка на прикладі:
             </p>
             <div className={styles.gallery}>
               <img

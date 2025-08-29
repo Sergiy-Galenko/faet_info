@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import Header from "./Header";
 import Plane from "./Plane";
+import ParticleCursor from "./ParticleCursor"; // партикл-курсор
 
 import Navchannia from "../pages/Navchannia";
 import Hurtozhytky from "../pages/Hurtozhytky";
@@ -20,11 +21,15 @@ function GlobalStyles() {
         --blue:#2563eb;        /* синій акцент */
         --border:#1f2937;      /* бордер */
       }
-      .page-wrap{ background:var(--bg); min-height:100dvh; }
+
+      /* БАЗА СТОРІНКИ */
+      .page-wrap{ background:var(--bg); min-height:100dvh; position:relative; }
+      .page-foreground{ position:relative; z-index:1; } /* увесь контент над полотном частинок */
       .container{ max-width:1200px; margin:0 auto; padding:24px 16px 64px; }
 
       /* HERO */
       .hero{
+        position:relative;
         display:grid; grid-template-columns:1.1fr 0.9fr;
         gap:24px; align-items:center; margin-top:16px;
       }
@@ -75,7 +80,8 @@ function Landing() {
         <div className="hero-text">
           <h1>ФАЕТ — головна сторінка</h1>
           <p>
-          Факультет аеронавігації, електроніки та телекомунікацій – це місце, де поєднуються інновації, передові технології та сучасна освіта! 
+            Факультет аеронавігації, електроніки та телекомунікацій – це місце, де поєднуються інновації,
+            передові технології та сучасна освіта!
           </p>
         </div>
       </section>
@@ -114,14 +120,29 @@ export default function Main() {
     <BrowserRouter>
       <div className="page-wrap">
         <GlobalStyles />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/navchannia" element={<Navchannia />} />
-          <Route path="/hurtozhytky" element={<Hurtozhytky />} />
-          <Route path="/orhanizatsii" element={<Orhanizatsii />} />
-          <Route path="/slovnyk-pershokursnyka" element={<SlovnykPershokursnyka />} />
-        </Routes>
+
+        {/* Партикл-курсор (частинки-шлейф) на всій сторінці, під контентом */}
+        <ParticleCursor
+          colors={["#4f46e5","#22d3ee","#a855f7","#10b981","#ffffff"]}
+          spawn={14}
+          radius={[1.6, 3.2]}
+          speed={[0.7, 1.6]}
+          life={[28, 48]}
+          trail={0.14}
+          maxParticles={700}
+        />
+
+        {/* Весь видимий контент поверх полотна частинок */}
+        <div className="page-foreground">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/navchannia" element={<Navchannia />} />
+            <Route path="/hurtozhytky" element={<Hurtozhytky />} />
+            <Route path="/orhanizatsii" element={<Orhanizatsii />} />
+            <Route path="/slovnyk-pershokursnyka" element={<SlovnykPershokursnyka />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );

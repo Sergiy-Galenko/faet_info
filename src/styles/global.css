@@ -23,4 +23,66 @@
   
   h1,h2,h3 { letter-spacing: 0.2px; }
   button, input, textarea, select { font-family: inherit; }
-  
+/* CURSOR-FOLLOW AURA — мала, дуже яскрава, «водяна» */
+.parallax-aura{
+  position: fixed;
+  left: 0; top: 0;
+  z-index: 0;                 /* контент поверх — у .page-foreground */
+  pointer-events: none;
+  will-change: transform;
+  filter: saturate(130%);
+  transform: translate3d(50vw, 50vh, 0) translate(-50%, -50%);
+}
+
+/* кольорові «плями» всередині аури */
+.blob{
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  filter: blur(22px);
+  opacity: .85;
+}
+.blob.b1{
+  background: radial-gradient(40% 40% at 35% 45%, rgba(79,70,229,.9), rgba(79,70,229,0) 70%);
+}
+.blob.b2{
+  background: radial-gradient(45% 45% at 65% 55%, rgba(34,211,238,.85), rgba(34,211,238,0) 72%);
+}
+.blob.b3{
+  background: radial-gradient(38% 38% at 55% 32%, rgba(168,85,247,.8), rgba(168,85,247,0) 68%);
+}
+.blob.b4{
+  background: radial-gradient(36% 36% at 42% 66%, rgba(16,185,129,.75), rgba(16,185,129,0) 66%);
+}
+.blob.b5{
+  background: radial-gradient(28% 28% at 58% 44%, rgba(255,255,255,.55), rgba(255,255,255,0) 60%);
+}
+
+/* рипл — кільця як від води */
+.ripple{
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 100%; height: 100%;
+  transform: translate(-50%, -50%) scale(.28);
+  border-radius: 50%;
+  /* кільце з прозорою серединкою та м’якими краями */
+  background: radial-gradient(closest-side,
+              rgba(var(--col), 0) 58%,
+              rgba(var(--col), .85) 67%,
+              rgba(var(--col), 0) 80%);
+  filter: blur(10px);
+  opacity: .9;
+  animation: ripple-wave 720ms ease-out forwards;
+  mix-blend-mode: screen;
+}
+
+@keyframes ripple-wave{
+  0%   { transform: translate(-50%, -50%) scale(.28); opacity:.9; filter: blur(10px); }
+  60%  { transform: translate(-50%, -50%) scale(1.0); opacity:.45; }
+  100% { transform: translate(-50%, -50%) scale(1.35); opacity:0; filter: blur(14px); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .ripple{ animation: none; display: none; }
+}

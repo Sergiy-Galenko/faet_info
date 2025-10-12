@@ -60,6 +60,7 @@ export default function Header() {
   const navLinks = [
     { to: "/navchannia", label: "Навчання" },
     { to: "/hurtozhytky", label: "Гуртожитки" },
+    { to: "/administratsiia", label: "Адміністрація" },
     { to: "/orhanizatsii", label: "Організації" },
     { to: "/slovnyk-pershokursnyka", label: "Словник першокурсника" },
   ];

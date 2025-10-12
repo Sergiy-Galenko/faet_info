@@ -7,6 +7,7 @@ import ParticleCursor from "./ParticleCursor"; // партикл-курсор
 
 import Navchannia from "../pages/Navchannia";
 import Hurtozhytky from "../pages/Hurtozhytky";
+import Administratsiia from "../pages/Administratsiia";
 import Orhanizatsii from "../pages/Orhanizatsii";
 import SlovnykPershokursnyka from "../pages/SlovnykPershokursnyka";
 
@@ -43,7 +44,12 @@ function GlobalStyles() {
       .hero-text p{ margin:0; color:var(--muted); line-height:1.6; }
 
       /* CARDS */
-      .cards{ margin-top:32px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+      .cards{
+        margin-top:32px;
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+        gap:16px;
+      }
       .card{
         background:var(--card); border:1px solid var(--border); border-radius:16px;
         padding:18px; color:var(--txt); display:flex; flex-direction:column; gap:8px;
@@ -100,6 +106,12 @@ function Landing() {
         </article>
 
         <article className="card">
+          <h3>Адміністрація</h3>
+          <p>Хто за що відповідає та де знайти деканат і кафедри.</p>
+          <Link to="/administratsiia" className="btn">Дізнатися більше</Link>
+        </article>
+
+        <article className="card">
           <h3>Організації</h3>
           <p>Студради, клуби, наукові товариства.</p>
           <Link to="/orhanizatsii" className="btn">Дізнатися більше</Link>
@@ -139,6 +151,7 @@ export default function Main() {
             <Route path="/" element={<Landing />} />
             <Route path="/navchannia" element={<Navchannia />} />
             <Route path="/hurtozhytky" element={<Hurtozhytky />} />
+            <Route path="/administratsiia" element={<Administratsiia />} />
             <Route path="/orhanizatsii" element={<Orhanizatsii />} />
             <Route path="/slovnyk-pershokursnyka" element={<SlovnykPershokursnyka />} />
           </Routes>

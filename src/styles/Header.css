@@ -67,6 +67,8 @@
   display: none;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 5px;
   width: 44px;
   height: 40px;
   padding: 0;
@@ -84,9 +86,9 @@
   height: 2px;
   border-radius: 999px;
   background: var(--faet-white);
+  transform-origin: center;
   transition: transform .2s ease, opacity .2s ease;
 }
-.faet-burger span + span{ margin-top: 5px; }
 .faet-burger.is-active span:nth-child(1){
   transform: translateY(7px) rotate(45deg);
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import styles from "../styles/Orhanizatsii.module.css";
 
 import srFaet from "../image/telegram-peer-photo-size-2-5206268831641752870-1-0-0.jpg";
@@ -10,16 +10,36 @@ import nahub1 from "../image/nauhub.jpg";
 import nahub2 from "../image/nauhub2.jpg";
 
 function AccordionItem({ title, defaultOpen = false, children }) {
+  const contentId = useId();
+  const triggerId = `${contentId}-trigger`;
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const itemClass = `${styles.accItem}${isOpen ? ` ${styles.accItemOpen}` : ""}`;
+
   return (
-    <details className={styles.accItem} open={defaultOpen}>
-      <summary className={styles.accSummary}>
+    <article className={itemClass}>
+      <button
+        type="button"
+        className={styles.accSummary}
+        id={triggerId}
+        aria-expanded={isOpen}
+        aria-controls={contentId}
+        onClick={() => setIsOpen((open) => !open)}
+      >
         <span>{title}</span>
         <svg className={styles.chevron} width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
           <path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" strokeWidth="2" />
         </svg>
-      </summary>
-      <div className={styles.accBody}>{children}</div>
-    </details>
+      </button>
+      <div
+        id={contentId}
+        className={styles.accBody}
+        hidden={!isOpen}
+        aria-hidden={!isOpen}
+        aria-labelledby={triggerId}
+      >
+        {children}
+      </div>
+    </article>
   );
 }
 

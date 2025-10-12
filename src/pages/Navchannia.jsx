@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 import styles from "../styles/Navchannia.module.css";
 import payment from "../image/2025-08-26_12-19-01.jpg";
 
 function AccordionItem({ title, defaultOpen = false, children }) {
+  const contentId = useId();
+  const triggerId = `${contentId}-trigger`;
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const itemClass = `${styles.accItem}${isOpen ? ` ${styles.accItemOpen}` : ""}`;
+
   return (
-    <details className={styles.accItem} open={defaultOpen}>
-      <summary className={styles.accSummary}>
+    <article className={itemClass}>
+      <button
+        type="button"
+        className={styles.accSummary}
+        id={triggerId}
+        aria-expanded={isOpen}
+        aria-controls={contentId}
+        onClick={() => setIsOpen((open) => !open)}
+      >
         <span>{title}</span>
         <svg
           className={styles.chevron}
@@ -13,9 +25,17 @@ function AccordionItem({ title, defaultOpen = false, children }) {
         >
           <path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" strokeWidth="2" />
         </svg>
-      </summary>
-      <div className={styles.accBody}>{children}</div>
-    </details>
+      </button>
+      <div
+        id={contentId}
+        className={styles.accBody}
+        hidden={!isOpen}
+        aria-hidden={!isOpen}
+        aria-labelledby={triggerId}
+      >
+        {children}
+      </div>
+    </article>
   );
 }
 

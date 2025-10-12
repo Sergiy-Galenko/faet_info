@@ -11,15 +11,18 @@
   
   html { font-size: 16px; }
   
-  body{
-    font-family: var(--font-sans);
-    color: var(--txt);
-    background: var(--bg);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    line-height: 1.55;
-  }
+body{
+  font-family: var(--font-sans);
+  color: var(--txt);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.55;
+}
+body.no-scroll{
+  overflow: hidden;
+}
   
   h1,h2,h3 { letter-spacing: 0.2px; }
   button, input, textarea, select { font-family: inherit; }

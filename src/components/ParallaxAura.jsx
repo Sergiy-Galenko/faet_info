@@ -10,7 +10,6 @@ export default function ParallaxAura({ size = 220, rippleEveryMs = 120 }) {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
 
-    // Фактори для паралакс-ефекту (різна швидкість руху для кожного шару)
     const parallaxFactors = [0.3, 0.5, 0.7, 0.9, 1.1];
 
     const placeContainer = (x, y) => {
